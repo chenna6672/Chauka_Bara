@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barakatta</title>
+    <style>
+        td {
+            border:2px solid rgb(192, 95, 95);
+            background-color: rgb(117, 125, 201);
+        }
+        tr {
+            height: 60px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <table style=" width:500px; height: 500px; margin-left: auto; margin-right: auto; table-layout: fixed;" id="table">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="background-color: yellow;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br><br>
+    <div style="float: left;">
+        <h3>player1</h3>
+        <button id="dbutp1" onclick="number1()"  style="width: 72px; height: 72px; background-color: orange;"><h2 id="die1">6</h2></button>
+        <button id="img11" disabled onclick="move1(0)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+        <button id="img12" disabled onclick="move1(1)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+        <button id="img13" disabled onclick="move1(2)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+        <button id="img14" disabled onclick="move1(3)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+        <button id="img15" disabled onclick="move1(4)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+        <button id="img16" disabled onclick="move1(5)" style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin.png" style="width: 20px; margin:0px;" alt="1"></button>
+    </div>
+    <div style="float: right;">
+        <h3>player2</h3> 
+        <button id="img21" onclick="move2(0)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="img22" onclick="move2(1)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="img23" onclick="move2(2)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="img24" onclick="move2(3)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="img25" onclick="move2(4)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="img26" onclick="move2(5)" disabled style="width: 20px; height: 20px; padding: 0px; border-width: 0px;background-color:transparent"><img src="coin2.png" style="width: 20px; margin:0px;" alt="2"></button>
+        <button id="dbutp2" onclick="number2()" disabled style="width: 72px; height: 72px; background-color: pink;"><h2 id="die2">6</h2></button>
+    </div>
+   <h3 id="last"></h3>
+</body>
+</html>
+<script>
+var img = document.getElementById("img11");
+    var img2 = document.getElementById("img12");
+    var img3 = document.getElementById("img13");
+    var img4 = document.getElementById("img14");
+    var img5 = document.getElementById("img15");
+    var img6 = document.getElementById("img16");
+    var imga = document.getElementById("img21");
+    var imga2 = document.getElementById("img22");
+    var imga3 = document.getElementById("img23");
+    var imga4 = document.getElementById("img24");
+    var imga5 = document.getElementById("img25");
+    var imga6 = document.getElementById("img26");
+    var count1 = [0,0,0,0,0,0];
+    var play1=false;
+    var play2=false;
+    var count1 = [0,0,0,0,0,0];
+    var count2 = [0,0,0,0,0,0];
+    var x=0;
+    var box1=[6,6,6,6,5,4,3,2,1,0,0,0,0,0,0,0,1,2,3,4,5,6,6,6,5,4,3,2,1,1,1,1,1,2,3,4,5,5,5,5,4,3,2,2,2,3,4,4,3];
+    var box2=[3,4,5,6,6,6,6,6,6,6,5,4,3,2,1,0,0,0,0,0,0,0,1,2,1,1,1,1,1,2,3,4,5,5,5,5,5,4,3,2,2,2,2,3,4,4,4,3,3];
+    var box12=[0,0,0,0,1,2,3,4,5,6,6,6,6,6,6,6,5,4,3,2,1,0,0,0,1,2,3,4,5,5,5,5,5,4,3,2,1,1,1,1,2,3,4,4,4,3,2,2,3];
+    var box22=[3,2,1,0,0,0,0,0,0,0,1,2,3,4,5,6,6,6,6,6,6,6,5,4,5,5,5,5,5,4,3,2,1,1,1,1,1,2,3,4,4,4,4,3,2,2,2,3,3];
+    function number1() {
+        x = Math.ceil(Math.random() * 6);
+        valid(1);
+        document.getElementById("die1").innerHTML=x;
+
+        if(!play1) {
+            if(x != 6) {
+                document.getElementById("dbutp1").disabled=true;
+                document.getElementById("dbutp2").disabled=false;
+            }
+            else {
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img);
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img2);
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img3);
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img4);
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img5);
+                document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img6);
+                play1 = true;
+            }
+        }
+        else {
+            document.getElementById("dbutp1").disabled=true;
+            document.getElementById("img11").disabled=false;
+            document.getElementById("img12").disabled=false;
+            document.getElementById("img13").disabled=false;
+            document.getElementById("img14").disabled=false;
+            document.getElementById("img15").disabled=false;
+            document.getElementById("img16").disabled=false;
+        }
+    }
+    function move1(a) {
+        count1[a] = count1[a] + x;
+        win(1);
+        var ac=possible(count1[a]);
+        if(ac || (count1[a]==0 || count1[a]==6 || count1[a]==12 || count1[a]==18 || count1[a]==24 || count1[a]==28 || count1[a]==32 || count1[a]==36 || count1[a]==48)) {
+        if(count1[a] <= 48) {
+        if(((box1[count1[a]]== box12[count2[0]] && box2[count1[a]]==box22[count2[0]]) || (box1[count1[a]]== box12[count2[1]] && box2[count1[a]]==box22[count2[1]]) || 
+            (box1[count1[a]]== box12[count2[2]] && box2[count1[a]]==box22[count2[2]]) || (box1[count1[a]]== box12[count2[3]] && box2[count1[a]]==box22[count2[3]]) || 
+            (box1[count1[a]]== box12[count2[4]] && box2[count1[a]]==box22[count2[4]]) || (box1[count1[a]]== box12[count2[5]] && box2[count1[a]]==box22[count2[5]])) &&
+           (count1[a]!=0 && count1[a]!=6 && count1[a]!=12 && count1[a]!=18 && count1[a]!=24 && count1[a]!=28 && count1[a]!=32 && count1[a]!=36 && count1[a]!=48) ) {
+            if((box1[count1[a]]== box12[count2[0]] && box2[count1[a]]==box22[count2[0]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga);
+                momentback2(count2[0],imga);
+                count2[0]=0;
+            }
+            if((box1[count1[a]]== box12[count2[1]] && box2[count1[a]]==box22[count2[1]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga2);
+                momentback2(count2[1],imga2);
+                count2[1]=0;
+            }
+            if((box1[count1[a]]== box12[count2[2]] && box2[count1[a]]==box22[count2[2]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga3);
+                momentback2(count2[2],imga3);
+                count2[2]=0;
+            }
+            if((box1[count1[a]]== box12[count2[3]] && box2[count1[a]]==box22[count2[3]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga4);
+                momentback2(count2[3],imga4);
+                count2[3]=0;
+            }
+            if((box1[count1[a]]== box12[count2[4]] && box2[count1[a]]==box22[count2[4]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga5);
+                momentback2(count2[4],imga5);
+                count2[4]=0;
+            }
+            if((box1[count1[a]]== box12[count2[5]] && box2[count1[a]]==box22[count2[5]])) {
+                //document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga6);
+                momentback2(count2[5],imga6);
+                count2[5]=0;
+                
+            }
+            }
+        
+        if(a==0) {
+            moment(count1[a],img);
+
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img);
+        }
+        if(a==1) {
+            moment(count1[a],img2);
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img2);
+        }
+        if(a==2) {
+            moment(count1[a],img3);
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img3);
+        }
+        if(a==3) {
+            moment(count1[a],img4);
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img4);
+        }
+        if(a==4) {
+            moment(count1[a],img5);
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img5);
+        }
+        if(a==5) {
+            moment(count1[a],img6);
+        //document.getElementById("table").rows[box1[count1[a]]].cells[box2[count1[a]]].appendChild(img6);
+        }
+        document.getElementById("img11").disabled=true;
+        document.getElementById("img12").disabled=true;
+        document.getElementById("img13").disabled=true;
+        document.getElementById("img14").disabled=true;
+        document.getElementById("img15").disabled=true;
+        document.getElementById("img16").disabled=true;
+        if(x!=6){
+            document.getElementById("dbutp2").disabled=false;
+        }
+        if(x==6) {
+            document.getElementById("dbutp1").disabled=false;
+        }
+    }
+    else {
+            alert("move is not possible");
+            count1[a] = count1[a] - x;
+        }
+        }
+        else {
+            alert("move is not possible");
+            count1[a] = count1[a] - x;
+        }
+    }
+    function number2() {
+        x = Math.ceil(Math.random() * 6);
+        document.getElementById("die2").innerHTML=x;
+        valid(2);
+
+        if(!play2) {
+            if(x != 6) {
+                document.getElementById("dbutp2").disabled=true;
+                document.getElementById("dbutp1").disabled=false;
+            }
+            else {
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga);
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga2);
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga3);
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga4);
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga5);
+                document.getElementById("table").rows[box12[0]].cells[box22[0]].appendChild(imga6);
+                play2=true;
+            }
+        }
+        else {
+            document.getElementById("img21").disabled=false;
+            document.getElementById("img22").disabled=false;
+            document.getElementById("img23").disabled=false;
+            document.getElementById("img24").disabled=false;
+            document.getElementById("img25").disabled=false;
+            document.getElementById("img26").disabled=false;
+            document.getElementById("dbutp2").disabled=true;
+
+        }
+    }
+    function move2(a) {
+        count2[a] = count2[a] + x;
+        win(2);
+        var ac=possible2(count2[a])
+        if(ac ||(count2[a]==0 || count2[a]==6 || count2[a]==12 || count2[a]==18 || count2[a]==24 || count2[a]==28 || count2[a]==32 || count2[a]==36 || count2[a]==48)){
+        if(count2[a] <= 48) {
+            if(((box12[count2[a]]== box1[count1[0]] && box22[count2[a]]==box2[count1[0]]) || (box12[count2[a]]== box1[count1[1]] && box22[count2[a]]==box2[count1[1]]) || 
+                (box12[count2[a]]== box1[count1[2]] && box22[count2[a]]==box2[count1[2]]) || (box12[count2[a]]== box1[count1[3]] && box22[count2[a]]==box2[count1[3]]) || 
+                (box12[count2[a]]== box1[count1[4]] && box22[count2[a]]==box2[count1[4]]) || (box12[count2[a]]== box1[count1[5]] && box22[count2[a]]==box2[count2[5]])) &&
+                (count2[a]!=0 && count2[a]!=6 && count2[a]!=12 && count2[a]!=18 && count2[a]!=24 && count2[a]!=28 && count2[a]!=32 && count2[a]!=36 && count2[a]!=48) ) {
+                if((box12[count2[a]]== box1[count1[0]] && box22[count2[a]]==box2[count1[0]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img);
+                    momentback(count1[0],img);
+                    count1[0]=0;
+                }
+                if((box12[count2[a]]== box1[count1[1]] && box22[count2[a]]==box2[count1[1]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img2);
+                    momentback(count1[1],img2);
+                    count1[1]=0;
+                }
+                if((box12[count2[a]]== box1[count1[2]] && box22[count2[a]]==box2[count1[2]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img3);
+                    momentback(count1[2],img3);
+                    count1[2]=0;
+                }
+                if((box12[count2[a]]== box1[count1[3]] && box22[count2[a]]==box2[count1[3]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img4);
+                    momentback(count1[3],img4);
+                    count1[3]=0;
+                }
+                if((box12[count2[a]]== box1[count1[4]] && box22[count2[a]]==box2[count1[4]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img5);
+                    momentback(count1[4],img5);
+                    count1[4]=0;
+                }
+                if((box12[count2[a]]== box1[count1[5]] && box22[count2[a]]==box2[count1[5]])) {
+                    //document.getElementById("table").rows[box1[0]].cells[box2[0]].appendChild(img6);
+                    momentback(count1[5],img6);
+                    count1[5]=0;
+                }
+            }
+
+        
+        if(a==0) {
+            moment2(count2[a],imga);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga);
+        }
+        if(a==1) {
+            moment2(count2[a],imga2);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga2);
+        }
+        if(a==2) {
+            moment2(count2[a],imga3);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga3);
+        }
+        if(a==3) {
+            moment2(count2[a],imga4);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga4);
+        }
+        if(a==4) {
+            moment2(count2[a],imga5);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga5);
+        }
+        if(a==5) {
+            moment2(count2[a],imga6);
+        //document.getElementById("table").rows[box12[count2[a]]].cells[box22[count2[a]]].appendChild(imga6);
+        }
+        document.getElementById("img21").disabled=true;
+        document.getElementById("img22").disabled=true;
+        document.getElementById("img23").disabled=true;
+        document.getElementById("img24").disabled=true;
+        document.getElementById("img25").disabled=true;
+        document.getElementById("img26").disabled=true;
+        if(x!=6) {
+            document.getElementById("dbutp1").disabled=false;
+        }
+        if(x==6) {
+            document.getElementById("dbutp2").disabled=false;
+        }
+        }
+        else {
+            alert("move is not possible");
+            count2[a] = count2[a] -x;
+        }
+    }
+    else {
+            alert("move is not possible");
+            count2[a] = count2[a] -x;
+        }
+    }
+
+function moment2(c,d) {
+    var p = c - x;
+    var pos =0;
+    var id = setInterval(frame, 100);
+                    function frame() {
+                        if (pos == x) {
+                            clearInterval(id);
+                        } 
+                        else {
+                            pos++; 
+                            document.getElementById("table").rows[box12[p+pos]].cells[box22[p+pos]].appendChild(d);  
+                        }
+                    }
+
+}
+function moment(c,d) {
+    var p = c - x;
+    var pos =0;
+    var id = setInterval(frame, 100);
+                    function frame() {
+                        if (pos == x) {
+                            clearInterval(id);
+                        } 
+                        else {
+                            pos++; 
+                            document.getElementById("table").rows[box1[p+pos]].cells[box2[p+pos]].appendChild(d);  
+                        }
+                    }
+
+}
+function momentback(c,d) {
+    alert(c+"die" + d.id);
+    var pos =c;
+    var id = setInterval(frame, 300);
+                    function frame() {
+                        if (pos == 0) {
+                            clearInterval(id);
+                        } 
+                        else {
+                            pos--; 
+                            document.getElementById("table").rows[box1[pos]].cells[box2[pos]].appendChild(d);  
+                        }
+                    }
+
+}
+function momentback2(c,d) {
+    alert(c+"die" + d.id);
+    var pos =c;
+    var id = setInterval(frame, 300);
+                    function frame() {
+                        if (pos == 0) {
+                            clearInterval(id);
+                        } 
+                        else {
+                            pos--; 
+                            document.getElementById("table").rows[box12[pos]].cells[box22[pos]].appendChild(d);  
+                        }
+                    }
+
+}
+function possible(c) {
+    var b =0;
+    for(var i=0;i<=5;i++) {
+        if(c==count1[i]){
+            b++;
+        }
+    }
+    if(b==1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+function possible2(c) {
+    var b =0;
+    for(var i=0;i<=5;i++) {
+        if(c==count2[i]){
+            b++;
+        }
+    }
+    if(b==1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+function win(c) {
+    var b =0;
+    if(c==1) {
+        for(var i=0;i<=5;i++) {
+            if(count1[i]==48) {
+                b=b+1;
+            }
+        }
+            if(b==6) {
+                document.getElementById("last").innerHTML="player1 won the match";
+                document.getElementById("dbutp1").style.display="none";
+                document.getElementById("dbutp2").style.display="none";
+            } 
+    }
+    if(c==2) {
+        for(var i=0;i<=5;i++) {
+            if(count2[i]==48) {
+                b=b+1;
+            }
+        }
+            if(b==6) {
+                document.getElementById("last").innerHTML="player1 won the match";
+                document.getElementById("dbutp1").style.display="none";
+                document.getElementById("dbutp2").style.display="none";
+            } 
+    }
+}
+function valid(d) {
+    var b=0;
+    if(d==1) {
+    for(var i=0;i<=5;i++) {
+        if((count1[i]+x) > 48) {
+            b=b+1;
+        }
+    }
+    if(b==6) {
+        document.getElementById("img11").disabled=true;
+        document.getElementById("img12").disabled=true;
+        document.getElementById("img13").disabled=true;
+        document.getElementById("img14").disabled=true;
+        document.getElementById("img15").disabled=true;
+        document.getElementById("img16").disabled=true;
+        document.getElementById("dbutp2").disabled=false;
+
+    }
+    }
+    if(d==2) {
+    for(var i=0;i<=5;i++) {
+        if((count2[i]+x) > 48) {
+            b=b+1;
+        }
+    }
+    if(b==6) {
+        document.getElementById("img21").disabled=true;
+        document.getElementById("img22").disabled=true;
+        document.getElementById("img23").disabled=true;
+        document.getElementById("img24").disabled=true;
+        document.getElementById("img25").disabled=true;
+        document.getElementById("img26").disabled=true;
+        document.getElementById("dbutp1").disabled=false;
+    }
+    }
+}
+</script>
